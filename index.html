@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-menu">
+            <div class="space">
+                <div class="menu-mobile" onclick="openMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="Group 2682.png" alt="" width="200px" height="68px">
+            </div>
+            <div class="space left">
+                <div class="checkout">
+                    <a href="http://127.0.0.1:5500/checkout.html">
+                        <img src="ShoppingCart.svg" alt="" width="32px" height="32px">
+                    </a>
+                </div>
+            </div>
+            <div class="side-bar">
+                <div class="side__content">
+                    <ul class="side__items">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="area-slider">
+            <div class="slider">
+                <div class="list-view-slider">
+                    <div class="slider-width">
+                            <a href="http://127.0.0.1:5500/item.html" class="slider-item" id="item1">
+                                <div class="all-info">
+                                    <div class="slider-item__img">
+                                        <div class="gradient"></div>
+                                        <img src="webDev.jpg" alt="">
+                                    </div>
+                                    <div class="slider-item__title">
+                                        <span>
+                                            Trabalho de Desenvolvimento Web
+                                        </span>
+                                    </div>
+                                    <div class="slider-item__info">
+                                        <span>
+                                            Valor: 120$
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="http://127.0.0.1:5500/item.html" class="slider-item" id="item2">
+                                <div class="all-info">
+                                    <div class="slider-item__img">
+                                        <img src="sftEng.PNG" alt="">
+                                        <div class="gradient"></div>
+                                    </div>
+                                    <div class="slider-item__title">
+                                        <span>
+                                            Trabalho de Engenharia de Software
+                                        </span>
+                                    </div>
+                                    <div class="slider-item__info">
+                                        <span>
+                                            Valor: 85$
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="http://127.0.0.1:5500/item.html" class="slider-item" id="item3">
+                                <div class="all-info">
+                                    <div class="slider-item__img">
+                                        <img src="estDados.jpg" alt="">
+                                        <div class="gradient"></div>
+                                    </div>
+                                    <div class="slider-item__title">
+                                        <span>
+                                            Trabalho de Estrutura de Dados 2
+                                        </span>
+                                    </div>
+                                    <div class="slider-item__info">
+                                        <span>
+                                            Valor: 42000$
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                    </div>    
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-control" onclick="goPrev()">
+                        <img src="chevron-right.svg" alt="" width="100%" style="rotate: 180deg;"> 
+                    </div>
+                    <div class="slider-control" onclick="goNext()">
+                        <img src="chevron-right.svg" alt="" width="100%">
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="mid-area">
+            
+        </div>
+    </div>
+    <footer>
+        <script>
+            let page = "home"
+        </script>
+    </footer>
+</body>
+</html>

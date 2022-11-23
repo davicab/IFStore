@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-menu">
+            <div class="space">
+                <div class="menu-mobile" onclick="openMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="Group 2682.png" alt="" width="200px" height="68px">
+            </div>
+            <div class="space left">
+                <div class="checkout">
+                    <a href="http://127.0.0.1:5500/checkout.html">
+                        <img src="ShoppingCart.svg" alt="" width="32px" height="32px">
+                    </a>
+                </div>
+            </div>
+            <div class="side-bar">
+                <div class="side__content">
+                    <ul class="side__items">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-content" style="padding-top: 25px;">
+        <div class="breadcrumbs">
+            <span> <a href="http://127.0.0.1:5500/index.html">Home</a></span>
+            <img src="chevron-right.svg" alt="" width="24px" height="24px">
+            <span>Produto:  </span>
+            <span class="itemName"></span>
+        </div>
+        <div class="go-back" onclick="goBack()">
+            <svg width="35px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#808080" stroke-width="1" stroke-miterlimit="10"></path>
+                <path d="M18 11.5L13 16L18 20.5" stroke="#808080" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <span>Voltar</span>
+        </div>
+        <div class="select-item">
+            <div class="slider">
+                <div class="list-view-slider itemPage">
+                    <div class="slider-width" style="justify-content: center;">
+                        <div class="slider-item itemPage" id="item1">
+                            <div class="all-info">
+                                <div class="slider-item__img">
+                                    <div class="gradient"></div>
+                                    <img src="webDev.jpg" alt="">
+                                </div>
+                                <div class="slider-item__title">
+                                    <span>
+                                        Trabalho de Desenvolvimento Web
+                                    </span>
+                                </div>
+                                <div class="slider-item__info">
+                                    <span>
+                                        Valor: 120$
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="resume">
+                                <div class="produto-title">
+                                    <h1>
+                                        Trabalho de Desenvolvimento Web
+                                    </h1> 
+                                </div>
+                                <div class="produto-resumo">
+                                    <h2>
+                                        Contrate um aluno anonimo para fazer seu trabalho, <strong>no precinho</strong>.<br>Valor referente a 1 hora gasta por trabalho e nao pela quantiade de exercicios e/ou pela dificuldade.
+                                    </h2>
+                                </div>
+                                <div class="produto-valor">
+                                    <h2>
+                                        Valor: 120$
+                                    </h2>
+                                </div>
+                                <div class="produto-checkout">
+                                    <div class="add-cart" onclick="store()">
+                                        <img src="ShoppingCart.svg" alt="">
+                                        <span>Adicionar ao Carrinho</span>
+                                    </div>
+                                    <div class="buy-now">
+                                        <img src="CurrencyDollar.svg" alt="">
+                                        <span>Comprar agora</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-item itemPage" id="item2">
+                            <div class="all-info">
+                                <div class="slider-item__img">
+                                    <img src="sftEng.PNG" alt="">
+                                    <div class="gradient"></div>
+                                </div>
+                                <div class="slider-item__title">
+                                    <span>
+                                        Trabalho de Engenharia de Software
+                                    </span>
+                                </div>
+                                <div class="slider-item__info">
+                                    <span>
+                                        Valor: 85$
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="resume">
+                                <div class="produto-title">
+                                    <h1>
+                                        Trabalho de Engenharia de Software
+                                    </h1> 
+                                </div>
+                                <div class="produto-resumo">
+                                    <h2>
+                                        Contrate um aluno anonimo para fazer seu trabalho, <strong>no precinho</strong>.<br>Valor referente a 1 hora gasta por trabalho e nao pela quantiade de exercicios e/ou pela dificuldade.
+
+                                    </h2>
+                                </div>
+                                <div class="produto-valor">
+                                    <h2>
+                                        Valor: 85$
+                                    </h2>
+                                </div>
+                                <div class="produto-checkout">
+                                    <div class="add-cart" onclick="store()">
+                                        <img src="ShoppingCart.svg" alt="">
+                                        <span>Adicionar ao Carrinho</span>
+                                    </div>
+                                    <div class="buy-now">
+                                        <img src="CurrencyDollar.svg" alt="">
+                                        <span>Comprar agora</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-item itemPage" id="item3">
+                            <div class="all-info">
+                                <div class="slider-item__img">
+                                    <img src="estDados.jpg" alt="">
+                                    <div class="gradient"></div>
+                                </div>
+                                <div class="slider-item__title">
+                                    <span>
+                                        Trabalho de Estrutura de Dados 2
+                                    </span>
+                                </div>
+                                <div class="slider-item__info">
+                                    <span>
+                                        Valor: 42000$
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="resume">
+                                <div class="produto-title">
+                                    <h1>
+                                        Trabalho de Estrutura de Dados 2
+                                    </h1> 
+                                </div>
+                                <div class="produto-resumo">
+                                    <h2>
+                                        Contrate um aluno anonimo para fazer seu trabalho, <strong>no precinho</strong>.<br>Valor referente a 1 hora gasta por trabalho e nao pela quantiade de exercicios e/ou pela dificuldade.
+                                    </h2>
+                                </div>
+                                <div class="produto-valor">
+                                    <h2>
+                                        Valor: 42000$
+                                    </h2>
+                                </div>
+                                <div class="produto-checkout">
+                                    <div class="add-cart" onclick="store()">
+                                        <img src="ShoppingCart.svg" alt="">
+                                        <span>Adicionar ao Carrinho</span>
+                                    </div>
+                                    <div class="buy-now">
+                                        <img src="CurrencyDollar.svg" alt="">
+                                        <span>Comprar agora</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>  
+            </div> 
+        </div>
+
+    </div>
+    <footer>
+        <script>
+            let page = "produto"
+        </script>
+    </footer>
+</body>
+</html>
