@@ -107,7 +107,11 @@ function callStored(){
         if( guardados == "adicionado"){
             let ableItem = document.getElementById(localStorage.key( i ));
             ableItem.style.display = "flex"
-            console.log(ableItem)
         }
     }
+}
+function deleteItem(e){
+    let element = e.parentNode
+    let parentElement = element.parentNode
+    console.log(parentElement.id)
 }
