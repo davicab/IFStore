@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-menu">
+            <div class="space">
+                <div class="menu-mobile" onclick="openMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="Group 2682.png" alt="" width="200px" height="68px">
+            </div>
+            <div class="space left">
+                <div class="checkout">
+                    <a href="http://127.0.0.1:5500/cart.html">
+                        <img src="ShoppingCart.svg" class="shop-cart" alt="" width="32px" height="32px">
+                    </a>
+                    <div class="mini-ball"></div>
+                </div>
+            </div>
+            <div class="side-bar">
+                <div class="side__content">
+                    <ul class="side__items">
+                        <li><a href="http://127.0.0.1:5500/profile.html">Perfil</a></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="breadcrumbs">
+            <span> <a href="http://127.0.0.1:5500/index.html">Home</a></span>
+            <img src="chevron-right.svg" alt="" width="24px" height="24px">
+            <span>Perfil</span>
+        </div>
+        <div class="profile-box">
+            <div class="right-side">
+                <div class="profile-text">
+                    <h2>Perfil</h2>
+                    <hr class="dashed-line">
+                </div>
+                <div class="profile-options">
+                    <div class="options__adress">
+                        <div class="open-adress" id="adress">
+                            <span>Atualizar endereco de entrega</span>
+                        </div>
+                    </div>
+                    <div class="options__payment">
+                        <div class="open-adress" id="payment">
+                            <span>Atualizar metodo de pagamento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-side">
+                <div class="adress-form invisible">
+                    <h2>Endereco</h2>
+                    <div class="form-box">
+                        <span>Cep</span>
+                        <input type="number" placeholder="Cep">
+                    </div>
+                    <div class="form-box">
+                        <span>Cidade</span>
+                        <input type="text" placeholder="Cidade">
+                    </div>
+                    <div class="form-box">
+                        <span>Bairro</span>
+                        <input type="text" placeholder="Bairro">
+                    </div>
+                    <div class="form-box">
+                        <span>Complemento</span>
+                        <input type="text" placeholder="Complemento">
+                    </div>
+                </div>
+                <div class="payment-form invisible">
+                    <h2>Pagamento</h2>
+                    <div class="form-box">
+                        <span>Nome completo</span>
+                        <input type="text" placeholder="Nome completo">
+                    </div>
+                    <div class="form-box">
+                        <span>Numero do Cartao</span>
+                        <input type="text" placeholder="Numero">
+                    </div>
+                    <div class="form-box">
+                        <span>Data de vencimento</span>
+                        <input type="date" placeholder="Data de vencimento">
+                    </div>
+                    <div class="form-box">
+                        <span>Codigo de seguranca</span>
+                        <input type="text" placeholder="Codigo de seguranca">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <script>
+            let page = "profile"
+        </script>
+    </footer>
+</body>
+</html>

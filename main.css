@@ -346,6 +346,12 @@ header{
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    box-shadow: 0 2px 5px 2px #00000020;
+    transition: 0.3s;
+}
+.add-cart:hover,
+.buy-now:hover{
+    background-color: rgb(194 76 25);
 }
 .add-cart span,
 .buy-now span{
@@ -360,6 +366,7 @@ header{
     justify-content: flex-end;
     padding-right: 20px;
     cursor: pointer;
+    position: relative;
 }
 .space.left{
     justify-content: flex-end;
@@ -367,7 +374,7 @@ header{
 }
 .buy-section{
     width: 100%;
-    height: 500px;
+    height: auto;
     margin-top: 50px;
     position: relative;
 }
@@ -381,9 +388,9 @@ header{
 }
 .selected-item{
     width: 100%;
-    height: 30%;
+    height: 150px;
     background-color: #0060b1;
-    display: none;
+    display: flex;
 }
 .img-product img{
     border-radius: 12px;
@@ -397,4 +404,194 @@ header{
     background-color: #FFF;
     position: absolute;
     left: -1000px;
+}
+.popDelete{
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    background: #FFF;
+    transition: 1s ease;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.textDel{
+    text-align: center;
+}
+.but-del{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.del-yes{
+    width: 45%;
+    height: 40px;
+    background-color: lightgreen;
+}
+.del-no{
+    width: 45%;
+    height: 40px;
+    background-color: lightcoral;
+}
+.del-no,
+.del-yes{
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.moveOut{
+    left: -1000px;
+}
+.notification{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.d-none{
+    display: none!important;
+}
+.mini-ball{
+    background-color: red;
+    pointer-events: none;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+.shop-cart{
+    transition: 0.1s;
+}
+.selected-box{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cart-items{
+    width: 100%;
+    height: 450px;
+    display: flex;
+}
+.price-box{
+    width: 30%;
+    height: 100%;
+    background-color: #0060b1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 20px;
+}
+.profile-box{
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    display: flex;
+}
+.right-side{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.left-side{
+    width: 60%;
+    height: 100%;
+}
+.dashed-line{
+    border: none;
+    border-top: 2px dotted rgb(227, 82, 20);
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+    opacity: 1;
+}
+.profile-text{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.profile-text h2{
+    font-weight: 900;
+    color: rgb(0, 96, 177);
+    text-transform: uppercase;
+}
+.profile-option{
+    width: 100%;
+    height: auto;
+}
+.options__adress,
+.options__payment{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    box-shadow: 0 2px 5px 2px #00000020;
+    cursor: pointer;
+    border: 1px dotted #cfcfcf;
+    border-radius: 12px;
+    transition: 0.5s;
+}
+.options__adress:hover,
+.options__payment:hover{
+    background-color: #cfcfcf;
+}
+.open-adress{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.profile-options{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.adress-form,
+.payment-form{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.form-box{
+    width: 100%;
+    height: auto;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-box input{
+    width: 60%;
+    height: 50px;
+    border: 1px solid #505050;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.invisible{
+    height: 0px;
+    padding: 0;
+    overflow: hidden;
+}
+.value{
+    display: flex;
 }
