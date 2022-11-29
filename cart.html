@@ -57,7 +57,7 @@
         </div>
         <div class="buy-section">
             <h1 style="text-align: center;">Carrinho de compras:</h1>
-            <div class="cart-items">
+            <div class="cart-items d-none">
                 <div class="selected-box">
                     <div class="selected-item d-none" id="item1" data-value="120">
                         <div class="inner-item">
@@ -114,9 +114,14 @@
                         <span>R$</span>
                         <span id="receive-value"></span>
                     </div>
+                    <div class="close-buy">
+                        <a href="http://127.0.0.1:5500/checkout.html">
+                            <span>Concluir compra</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="notification d-none">
+            <div class="notification">
                 <h2>Seu carrinho esta vazio :(</h2>
             </div>
             <div class="popDelete moveOut">

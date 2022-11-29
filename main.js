@@ -6,7 +6,6 @@ switch (currentPage){
     break;
 
     case 'produto':
-        // store()
         callStored()
         getSelect()
     break
@@ -105,35 +104,26 @@ setInterval(function() {
     goNext()
 }, 5000);
 }
-function store(){
+function store(e){
     const add = 'adicionado';
-    const notYet = 'nao'
     let storedCart = localStorage.getItem("selecionado");
     
     localStorage.setItem(storedCart, add)
 
     ball.style.opacity = "1"
 
+    let target = e;
+    e.classList.add("activ")
 }
+
 function callStored(){
     if(localStorage.length > 0){
         for ( var i = 0; i < localStorage.length; ++i ) {
             let guardados = localStorage.getItem(localStorage.key( i ));
-            let notific = document.querySelector(".notification")
-            let total = document.querySelector(".cart-items")
 
             if( guardados == "adicionado"){
                 var ableItem = document.getElementById(localStorage.key( i ));
                 ableItem.classList.remove("d-none")
-                if(notific){
-                    notific.classList.add("d-none")
-                    total.classList.remove("d-none")
-                }
-            }if( guardados == "selecionado"){
-                if(notific){
-                    notific.classList.remove("d-none")
-                    total.classList.add("d-none")
-                }
             }
         }
     }
@@ -191,7 +181,18 @@ function getSum(){
     }
     let send_value = document.getElementById("receive-value")
     send_value.innerHTML = valor
-    console.log(valor)
+    localStorage.setItem("valor", valor)
+
+    let notific = document.querySelector(".notification")
+    let total = document.querySelector(".cart-items")
+
+    if(localStorage.getItem("valor") != null){
+        total.classList.remove("d-none")
+        notific.classList.add("d-none")
+    }else{
+        total.classList.add("d-none")
+        notific.classList.remove("d-none")
+    }
 }
 
 function handleProfile(){
@@ -213,4 +214,7 @@ function handleProfile(){
         }
         form_payment.classList.remove("invisible")
     })
+}
+function checkout(){
+    
 }
