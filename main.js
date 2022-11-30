@@ -158,6 +158,8 @@ setInterval(function() {
         let guardados = localStorage.getItem(localStorage.key( i ));
         if( guardados == "adicionado"){
             ball.style.opacity = "1"
+            let cartAnim = document.querySelector(".shop-cart")
+            cartAnim.classList.add("animated")
         }
         
     }

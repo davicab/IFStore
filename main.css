@@ -479,8 +479,15 @@ header{
     left: 0;
     opacity: 0;
 }
-.shop-cart{
-    transition: 0.1s;
+.shop-cart.animated{
+    animation: tilt-shaking 0.5s infinite;
+}
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
 }
 .selected-box{
     width: 70%;
