@@ -17,6 +17,9 @@ switch (currentPage){
     case 'profile':
         handleProfile()
     break
+    case 'checkout':
+        checkout()
+    break
 }
 
 let ball = document.querySelector('.mini-ball')
@@ -34,7 +37,7 @@ function openMenu(){
     
 }
 function selectProd(){
-    var produto = document.querySelectorAll('.slider-item')
+    let produto = document.querySelectorAll('.slider-item')
     produto.forEach((item, index) =>{
         item.addEventListener(("click"), () =>{
             const select = "selecionado";
@@ -50,7 +53,7 @@ function selectProd(){
 
 }
 function getSelect(){
-    var produto = document.querySelectorAll('.slider-item')
+    let produto = document.querySelectorAll('.slider-item')
     const select = "selecionado";
     let storedCart = localStorage.getItem(select);
     produto.forEach((item, index) =>{
@@ -118,11 +121,11 @@ function store(e){
 
 function callStored(){
     if(localStorage.length > 0){
-        for ( var i = 0; i < localStorage.length; ++i ) {
+        for ( let i = 0; i < localStorage.length; ++i ) {
             let guardados = localStorage.getItem(localStorage.key( i ));
 
             if( guardados == "adicionado"){
-                var ableItem = document.getElementById(localStorage.key( i ));
+                let ableItem = document.getElementById(localStorage.key( i ));
                 ableItem.classList.remove("d-none")
             }
         }
@@ -151,7 +154,7 @@ function deleteItem(e){
 
 }
 setInterval(function() {
-    for ( var i = 0; i < localStorage.length; ++i ) {
+    for ( let i = 0; i < localStorage.length; ++i ) {
         let guardados = localStorage.getItem(localStorage.key( i ));
         if( guardados == "adicionado"){
             ball.style.opacity = "1"
@@ -216,5 +219,9 @@ function handleProfile(){
     })
 }
 function checkout(){
-    
+    let valueTo = localStorage.getItem("valor")
+    let GoogleCharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=';
+    let imagemQRCode = GoogleCharts + "paga isso aqui no peaks, R$" + valueTo + " em: 00594950147";
+    let box_img = document.getElementById("imageQRCode")
+    box_img.src = imagemQRCode
 }
