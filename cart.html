@@ -33,7 +33,7 @@
                 <div class="side__content">
                     <ul class="side__items">
                         <li><a href="http://127.0.0.1:5500/profile.html">Perfil</a></li>
-                        <li></li>
+                        <li class="logout-button d-none">Sair</li>
                         <li></li>
                         <li></li>
                         <li></li>
@@ -114,10 +114,8 @@
                         <span>R$</span>
                         <span id="receive-value"></span>
                     </div>
-                    <div class="close-buy">
-                        <a href="http://127.0.0.1:5500/checkout.html">
-                            <span>Concluir compra</span>
-                        </a>
+                    <div class="close-buy" onclick="tryLog()">
+                        <span>Concluir compra</span>
                     </div>
                 </div>
             </div>

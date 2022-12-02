@@ -23,7 +23,7 @@
             </div>
             <div class="space left">
                 <div class="checkout">
-                    <a href="http://127.0.0.1:5500/checkout.html">
+                    <a href="http://127.0.0.1:5500/cart.html">
                         <img src="ShoppingCart.svg" class="shop-cart" alt="" width="32px" height="32px">
                     </a>
                     <div class="mini-ball"></div>
@@ -42,27 +42,50 @@
             </div>
         </div>
     </header>
-    <div class="main-content" style="padding-top: 25px;">
+    <div class="main-content">
         <div class="breadcrumbs">
             <span> <a href="http://127.0.0.1:5500/index.html">Home</a></span>
             <img src="chevron-right.svg" alt="" width="24px" height="24px">
-            <span>Carrinho de compras</span>
+            <span>Conta</span>
         </div>
-        <div class="go-back" onclick="history.back()">
-            <svg width="35px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="#808080" stroke-width="1" stroke-miterlimit="10"></path>
-                <path d="M18 11.5L13 16L18 20.5" stroke="#808080" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <span>Voltar</span>
-        </div>
-        <h1>Leia o QR Code abaixo e siga as instrucoes</h1>
-        <div class="box-QRCODE">
-            <img id="imageQRCode" src="">
+        <div class="profile-box">
+            <div class="sign">
+                <div class="login-form">
+                    <h2>Login</h2>
+                    <form action="javascript:logIn()">
+                        <div class="form-box">
+                            <input type="email" placeholder="Email" id="logEmail" required>
+                        </div>
+                        <div class="form-box">
+                            <input type="password" placeholder="Senha" id="logPass" required>
+                        </div>
+                        <div class="form-box">
+                            <input type="submit" value="Logar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="loggin">
+                <div class="login-form">
+                    <h2>Cadastro</h2>
+                    <form action="javascript:signIn()">
+                        <div class="form-box">
+                            <input type="email" placeholder="Email" id="signEmail" required>
+                        </div>
+                        <div class="form-box">
+                            <input type="password" placeholder="Senha" id="signPass" required>
+                        </div>
+                        <div class="form-box">
+                            <input type="submit" value="Cadastrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
         <script>
-            let page = "checkout"
+            let page = "account"
         </script>
     </footer>
 </body>

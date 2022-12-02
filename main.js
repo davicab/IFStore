@@ -191,7 +191,7 @@ function getSum(){
     let notific = document.querySelector(".notification")
     let total = document.querySelector(".cart-items")
 
-    if(localStorage.getItem("valor") != null){
+    if(localStorage.getItem("valor") != "null"){
         total.classList.remove("d-none")
         notific.classList.add("d-none")
     }else{
@@ -226,4 +226,88 @@ function checkout(){
     let imagemQRCode = GoogleCharts + "paga isso aqui no peaks, R$" + valueTo + " em: 00594950147";
     let box_img = document.getElementById("imageQRCode")
     box_img.src = imagemQRCode
+
+    if(localStorage.getItem("logged") == "no"){
+        window.location = "cart.html"
+    }
 }
+function tryLog(){
+    let isLogged = localStorage.getItem("logged")
+
+    if(!isLogged){
+        localStorage.setItem("logged" , "no")
+    }
+    
+    if(isLogged == "no"){
+        window.alert("Faca login")
+        window.location = "account.html"
+    }else{
+        window.location = "checkout.html"
+    }
+}
+
+function signIn(){
+    if(localStorage.getItem("logged") != "null" || localStorage.getItem("logged") != "yes"){
+        let email = document.getElementById("signEmail")
+        let senha = document.getElementById("signPass")
+
+        let listUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+    
+        listUser.push(
+        {
+            "email" : [email.value],
+            "senha" : [senha.value]
+        }
+        )
+    
+        localStorage.setItem("listaUser", JSON.stringify(listUser))
+    }
+}
+
+function logIn(){
+    let email = document.getElementById("logEmail")
+    let senha = document.getElementById("logPass")
+
+    let valEmail = email.value
+    let valSenha = senha.value
+
+    let listUser = JSON.parse(localStorage.getItem('listaUser'))
+    
+    if(listUser != null && listUser.length > 0){
+        
+        
+        for(let i = 0; i < listUser.length; i++){
+
+            let storedEmail = listUser[i].email
+            let storedSenha = listUser[i].senha
+
+            console.log(storedEmail)
+            
+            if(valEmail == storedEmail && valSenha != storedSenha){
+                window.alert("email ou senha errada")
+            }
+    
+            if(valEmail != storedEmail && valSenha == storedSenha){
+                window.alert("email ou senha errada")
+            }
+    
+            if(valEmail == storedEmail && valSenha == storedSenha){
+                localStorage.setItem("logged", "yes")
+                window.location = "checkout.html"
+            }
+        }
+
+    }else{
+        window.alert("faca o cadastro primeiro")
+    }
+}
+
+let logOut = document.querySelector(".logout-button")
+
+if(localStorage.getItem("logged") == "yes"){
+    logOut.classList.remove("d-none")
+}
+logOut.addEventListener(("click"), () =>{
+    localStorage.setItem("logged" , "no")
+    window.location.reload()
+})
