@@ -223,6 +223,7 @@ header{
     background-color: #FFF;
     border-radius: 10px;
     margin-top: 20px;
+    padding: 0 20px;
 }
 .all-info{
     height: 100%;
@@ -409,14 +410,8 @@ header{
 .inner-item h2{
     color: #FFF;
 }
-.popDelete{
-    width: 200px;
-    height: 100px;
-    background-color: #FFF;
-    position: absolute;
-    left: -1000px;
-}
-.popDelete{
+.popDelete,
+.popUp-account{
     position: absolute;
     width: 200px;
     height: 120px;
@@ -428,6 +423,11 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+.popUp-account{
+    font-weight: 900;
+    font-size: 20px;
+    color: #FFF;
 }
 .textDel{
     text-align: center;
@@ -519,6 +519,10 @@ header{
     padding: 10px;
     height: auto;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 .right-side{
     width: 40%;
@@ -606,6 +610,10 @@ header{
     padding-left: 20px;
     padding-right: 20px;
     outline: none;
+    transition: 0.5s;
+}
+.form-box input:focus{
+    box-shadow: 0 2px 5px 2px #00000020;
 }
 .invisible{
     height: 0px!important;
@@ -658,6 +666,14 @@ header{
 .loggin{
     width: 50%;
     height: 100%;
+    border: 3px solid #cfcfcf;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    transition: 0.5s;
+}
+.sign:hover,
+.loggin:hover{
+    box-shadow: 0 2px 5px 2px #00000020;
 }
 .login-form{
     width: 100%;
@@ -676,4 +692,72 @@ form{
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
+}
+.first-division{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.item-mid{
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+}
+.info-mid{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section h2{
+    width: auto;
+    font-size: 35px;
+    margin-right: 20px;
+    white-space: nowrap;
+    color: #505050;
+}
+hr.dotted-line{
+    width: 100%;
+    border-top: 2px dotted rgb(227, 82, 20);
+    border-bottom: none;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    opacity: 1;
+}
+.second-division{
+    margin-top: 20px;
+}
+.second-division img{
+    position: relative;
+    max-height: 290px;
+}
+.logout-button,
+.side__items li a{
+    cursor: pointer;
+    color: #FFF;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+#logButton,
+#signButton{
+    width: 40%;
+    background-color: #3690d9;
+    border: none;
+    color: #FFF;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#logButton:hover,
+#signButton:hover{
+    background-color: #0060b1;
 }

@@ -20,6 +20,9 @@ switch (currentPage){
     case 'checkout':
         checkout()
     break
+    case 'account':
+        handleAccount()
+    break
 }
 
 let ball = document.querySelector('.mini-ball')
@@ -250,18 +253,50 @@ function signIn(){
     if(localStorage.getItem("logged") != "null" || localStorage.getItem("logged") != "yes"){
         let email = document.getElementById("signEmail")
         let senha = document.getElementById("signPass")
-
+        let popText = document.getElementById("receive-text")
+        let popUpSign = document.querySelector(".popUp-account")
+        
         let listUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
-    
+        
+        if(listUser && listUser != null && listUser.length > 0){
+            for(let i = 0; i < listUser.length; i++){
+
+                let storedEmail = listUser[i].email
+
+                if(storedEmail == email.value){
+                    
+                    popText.innerHTML = "email ja cadastrado"
+                    popUpSign.style.backgroundColor = "#ff2525"
+                    return runPop();
+                }
+            }
+        }
         listUser.push(
         {
             "email" : [email.value],
             "senha" : [senha.value]
         }
         )
+
+        popText.innerHTML = "Cadastrado com sucesso"
+        popUpSign.style.backgroundColor = "#a5ffa5"
+        runPop()
     
         localStorage.setItem("listaUser", JSON.stringify(listUser))
+
+        let logForm = document.querySelector(".loggin")
+        if(logForm.classList.contains("d-none")){
+            logForm.classList.remove("d-none")
+        }
     }
+}
+function runPop(){
+    let popUpSign = document.querySelector(".popUp-account")
+    popUpSign.classList.remove("moveOut")
+
+    setTimeout(() => {
+        popUpSign.classList.add("moveOut")
+    }, 3000)
 }
 
 function logIn(){
@@ -280,27 +315,28 @@ function logIn(){
 
             let storedEmail = listUser[i].email
             let storedSenha = listUser[i].senha
-
-            console.log(storedEmail)
             
             if(valEmail == storedEmail && valSenha != storedSenha){
-                window.alert("email ou senha errada")
+                return window.alert("email ou senha errada")
             }
     
             if(valEmail != storedEmail && valSenha == storedSenha){
-                window.alert("email ou senha errada")
+                return window.alert("email ou senha errada")
             }
     
             if(valEmail == storedEmail && valSenha == storedSenha){
                 localStorage.setItem("logged", "yes")
-                window.location = "checkout.html"
+                if(localStorage.getItem("valor") && localStorage.getItem("valor") != null){
+                    window.location = "checkout.html"
+                }else{
+                    window.location = "index.html"
+                }
             }
         }
 
-    }else{
-        window.alert("faca o cadastro primeiro")
     }
 }
+
 
 let logOut = document.querySelector(".logout-button")
 
@@ -311,3 +347,20 @@ logOut.addEventListener(("click"), () =>{
     localStorage.setItem("logged" , "no")
     window.location.reload()
 })
+
+let breadClear = document.querySelector(".back-home")
+if(breadClear){
+    breadClear.addEventListener(("click") , () =>{
+        localStorage.removeItem("selecionado")
+    })
+}
+
+function handleAccount(){
+    let logForm = document.querySelector(".loggin")
+    let signForm = document.querySelector(".sign")
+
+    if(localStorage.getItem("listaUser")){
+        logForm.classList.remove("d-none")
+    }
+
+}

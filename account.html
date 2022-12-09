@@ -49,7 +49,7 @@
             <span>Conta</span>
         </div>
         <div class="profile-box">
-            <div class="sign">
+            <div class="loggin d-none">
                 <div class="login-form">
                     <h2>Login</h2>
                     <form action="javascript:logIn()">
@@ -60,12 +60,12 @@
                             <input type="password" placeholder="Senha" id="logPass" required>
                         </div>
                         <div class="form-box">
-                            <input type="submit" value="Logar">
+                            <input type="submit" value="Logar" id="logButton">
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="loggin">
+            <div class="sign">
                 <div class="login-form">
                     <h2>Cadastro</h2>
                     <form action="javascript:signIn()">
@@ -76,10 +76,15 @@
                             <input type="password" placeholder="Senha" id="signPass" required>
                         </div>
                         <div class="form-box">
-                            <input type="submit" value="Cadastrar">
+                            <input type="submit" value="Cadastrar" id="signButton">
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="popUp-account moveOut">
+            <div class="textDel">
+                <span id="receive-text"></span>
             </div>
         </div>
     </div>
