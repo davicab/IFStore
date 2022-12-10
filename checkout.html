@@ -32,9 +32,9 @@
             <div class="side-bar">
                 <div class="side__content">
                     <ul class="side__items">
-                        <li><a href="http://127.0.0.1:5500/profile.html">Perfil</a></li>
+                        <li class="profile-button d-none"><a href="http://127.0.0.1:5500/profile.html">Perfil</a></li>
                         <li class="logout-button d-none">Sair</li>
-                        <li></li>
+                        <li class="login-button d-none">Logar</li>
                         <li></li>
                         <li></li>
                     </ul>
@@ -46,7 +46,7 @@
         <div class="breadcrumbs">
             <span> <a href="http://127.0.0.1:5500/index.html">Home</a></span>
             <img src="chevron-right.svg" alt="" width="24px" height="24px">
-            <span>Carrinho de compras</span>
+            <span>Pagamento</span>
         </div>
         <div class="go-back" onclick="history.back()">
             <svg width="35px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,9 +55,11 @@
             </svg>
             <span>Voltar</span>
         </div>
-        <h1>Leia o QR Code abaixo e siga as instrucoes</h1>
-        <div class="box-QRCODE">
-            <img id="imageQRCode" src="">
+        <div class="payment-page">
+            <h1>Leia o QR Code abaixo e siga as instrucoes</h1>
+            <div class="box-QRCODE">
+                <img id="imageQRCode" src="">
+            </div>
         </div>
     </div>
     <footer>

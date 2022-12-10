@@ -79,36 +79,33 @@ function goBack(){
     localStorage.removeItem("selecionado");
 }
 if(currentPage == "home"){
-// Slide Lista de Exercícios ---------------------------------------
-let totalSlides = document.querySelectorAll('.slider-item').length;
-let size = document.querySelectorAll('.slider-item')[0].offsetWidth;
-let currentSlide = 0;
-document.querySelector('.slider-width').style.width = `calc(${size} * ${totalSlides})`;
-function goPrev() {
-    currentSlide--;
-    if(currentSlide < 0) {
-        currentSlide = totalSlides -1;
+    let totalSlides = document.querySelectorAll('.slider-item').length - 1;
+    let size = document.querySelectorAll('.slider-item')[0].offsetWidth;
+    let currentSlide = 0;
+    document.querySelector('.slider-width').style.width = `calc(${size} * ${totalSlides})`;
+    function goPrev() {
+        currentSlide--;
+        if(currentSlide < 0) {
+            currentSlide = totalSlides -1;
+        }
+        updateMargin();
     }
-    // console.log(currentSlide);
-    updateMargin();
-}
-function goNext() {
-    currentSlide++;
-    if(currentSlide > (totalSlides-1)) {
-        currentSlide = 0;
+    function goNext() {
+        currentSlide++;
+        if(currentSlide > (totalSlides-1)) {
+            currentSlide = 0;
+        }
+        updateMargin();
     }
-    // console.log(currentSlide);
-    updateMargin();
-}
-function updateMargin() {
-    let sliderItemWidth = document.querySelector('.slider-item').clientWidth + 4;
-    let newMargin = (currentSlide * sliderItemWidth);
-    let marginSlider = document.querySelector('.slider-width');
-    marginSlider.style.marginLeft = `-${newMargin}px`;
-}
-setInterval(function() {
-    goNext()
-}, 5000);
+    function updateMargin() {
+        let sliderItemWidth = document.querySelector('.slider-item').clientWidth;
+        let newMargin = (currentSlide * sliderItemWidth);
+        let marginSlider = document.querySelector('.slider-width');
+        marginSlider.style.marginLeft = `-${newMargin}px`;
+    }
+    setInterval(function() {
+        goNext()
+    }, 5000);
 }
 function store(e){
     const add = 'adicionado';
@@ -339,13 +336,21 @@ function logIn(){
 
 
 let logOut = document.querySelector(".logout-button")
+let log_in = document.querySelector(".login-button")
+let profile = document.querySelector(".profile-button")
 
 if(localStorage.getItem("logged") == "yes"){
     logOut.classList.remove("d-none")
+    profile.classList.remove("d-none")
+}else{
+    log_in.classList.remove("d-none")
 }
 logOut.addEventListener(("click"), () =>{
     localStorage.setItem("logged" , "no")
     window.location.reload()
+})
+log_in.addEventListener(("click"), () =>{
+    window.location = "account.html"
 })
 
 let breadClear = document.querySelector(".back-home")

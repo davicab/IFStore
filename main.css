@@ -205,6 +205,10 @@ header{
     left: 20px;
     bottom: 50px;
 }
+.slider-item__title span,
+.slider-item__info span{
+    max-width: 100%;
+}
 .slider-item__info {
     font-size: 30px;
     left: 20px;
@@ -224,6 +228,9 @@ header{
     border-radius: 10px;
     margin-top: 20px;
     padding: 0 20px;
+}
+.main-content.home{
+    margin-top: 0;
 }
 .all-info{
     height: 100%;
@@ -342,7 +349,7 @@ header{
 }
 .add-cart,
 .buy-now{
-    width: 35%;
+    width: 45%;
     height: 80px;
     background-color: rgb(227, 82, 20);
     border-radius: 120px;
@@ -635,6 +642,7 @@ header{
     justify-content: center;
     align-items: center;
     transition: 1s ease;
+    opacity: 0;
 }
 .pop-added span{
     color: #FFF;
@@ -645,6 +653,7 @@ header{
 .add-cart.activ .pop-added{
     height: 50px;
     padding: 0;
+    opacity: 1;
     overflow: hidden;
 }
 .close-buy{
@@ -739,6 +748,7 @@ hr.dotted-line{
     max-height: 290px;
 }
 .logout-button,
+.login-button,
 .side__items li a{
     cursor: pointer;
     color: #FFF;
@@ -760,4 +770,132 @@ hr.dotted-line{
 #logButton:hover,
 #signButton:hover{
     background-color: #0060b1;
+}
+.second-division .slider-item.itemPage{
+    background-color: #cfcfcf;
+    border: 2px solid #8b8b8b;
+    transition: 0.5s ease;
+}
+.payment-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    text-align: center;
+    width: 100%;
+}
+.box-QRCODE img{
+    max-width: 100%;
+}
+@media screen and (max-width: 999px){
+    .cart-items{
+        flex-direction: column;
+        height: auto;
+    }
+    .selected-box,
+    .price-box{
+        width: 100%;
+        height: auto;
+        padding: 12px 0;
+    }
+}
+@media screen and (max-width: 899px){
+    .select-item{
+        height: 100vh;
+    }
+    .slider-item.itemPage{
+        justify-content: unset;
+        gap: 30px;
+        flex-direction: column;
+    }
+    .slider-item.itemPage .resume{
+        height: auto;
+        width: 100%;
+    }
+    .slider-item.itemPage .resume .produto-checkout{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .slider-item.itemPage .resume .produto-checkout .add-cart,
+    .slider-item.itemPage .resume .produto-checkout .buy-now{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 799px) {
+    .first-division,
+    .second-division .slider-item.itemPage{
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .first-division .item-mid{
+        max-width: 100%;
+    }
+    .second-division .slider-item.itemPage .resume{
+        width: 100%;
+    }
+    .slider-width .all-info{
+        width: 100%;
+    }
+    .right-side,
+    .left-side{
+        width: 80%;
+    }
+    .form-box input{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 599px){
+    .slider-item__title span,
+    .slider-item__info span {
+        font-size: 18px;
+    }
+    .slider-control{
+        width: 50px;
+    }
+    .list-view-slider{
+        width: calc(100% - 110px);
+    }
+    .inner-item{
+        flex-wrap: wrap;
+        gap: 0px;
+        padding: 12px 0;
+        justify-content: center;
+        text-align: center;
+    }
+    .selected-item{
+        height: auto;
+    }
+    .price-box{
+        text-align: center;
+    }
+    .main-content{
+        padding: 12px;
+    }
+    .loggin,
+    .sign{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 399px){
+    .logo img{
+        scale: .7;
+    }
+    .slider-item.itemPage{
+        min-width: unset!important;
+    }
+    .slider-item__title span,
+    .slider-item__info span {
+        font-size: 15px;
+    }
+    .section h2{
+        font-size: 25px;
+    }
+    .right-side,
+    .left-side{
+        width: 100%;
+    }
 }
