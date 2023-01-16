@@ -228,7 +228,7 @@ function checkout(){
     box_img.src = imagemQRCode
 
     if(localStorage.getItem("logged") == "no"){
-        window.location = "cart.html"
+        window.location = "IFStore/cart.html"
     }
 }
 function tryLog(){
@@ -240,9 +240,9 @@ function tryLog(){
     
     if(isLogged == "no"){
         window.alert("Faca login")
-        window.location = "account.html"
+        window.location = "IFStore/account.html"
     }else{
-        window.location = "checkout.html"
+        window.location = "IFStore/checkout.html"
     }
 }
 
@@ -324,9 +324,9 @@ function logIn(){
             if(valEmail == storedEmail && valSenha == storedSenha){
                 localStorage.setItem("logged", "yes")
                 if(localStorage.getItem("valor") && localStorage.getItem("valor") != null){
-                    window.location = "checkout.html"
+                    window.location = "IFStore/checkout.html"
                 }else{
-                    window.location = "index.html"
+                    window.location = "IFStore/index.html"
                 }
             }
         }
@@ -350,7 +350,7 @@ logOut.addEventListener(("click"), () =>{
     window.location.reload()
 })
 log_in.addEventListener(("click"), () =>{
-    window.location = "account.html"
+    window.location = "IFStore/account.html"
 })
 
 let breadClear = document.querySelector(".back-home")
